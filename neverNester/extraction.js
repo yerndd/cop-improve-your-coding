@@ -17,7 +17,7 @@ function registerUser(user) {
     let check
  
     if(check = checkUser(userId)) {
-        users[check].username = username
+        users[check-1].username = username
     } else {
         users.push({ userId, username })
     }
@@ -27,7 +27,7 @@ function checkUser(userId) {
     for(let i=0; i < users.length; i++) {
         const el = users[i]
         if(el.userId === userId) {
-            return i
+            return i+1
         }
     }
  
