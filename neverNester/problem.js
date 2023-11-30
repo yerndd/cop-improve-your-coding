@@ -13,13 +13,13 @@ function registerUser(user) {
             for(let i=0; i < users.length; i++) {
                 const el = users[i]
                 if(el.userId === userId) {
-                    userExist = i
+                    userExist = i+1
                     break
                 }
             }
  
             if(userExist) {
-                users[userExist].username = username
+                users[userExist-1].username = username
             } else {
                 users.push({ userId, username })
             }
